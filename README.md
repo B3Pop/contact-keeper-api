@@ -20,15 +20,166 @@ Runs the app in the development mode on [http://localhost:3000](http://localhost
 
 ### Register a user [POST /api/users]
 
+**Request**: Add user and request JWT
+Headers:
+
+```bash
+Content-type: application/json
+```
+
+Body:
+
+```bash
+    {
+      "name": "Jack Sparrow",
+      "email": "jack@test.com",
+      "password": "123456"
+    }
+```
+
+**Response**: 200 (application/json)
+Body:
+
+```bash
+    {
+      "token": ""
+    }
+```
+
 ### Login a user [POST /api/auth]
+
+**Request**: Login user and receive JWT
+Headers:
+
+```bash
+Content-type: application/json
+```
+
+Body:
+
+```bash
+    {
+      "email": "jack@test.com",
+      "password": "123456"
+    }
+```
+
+**Response**: 200 (application/json)
+Body:
+
+```bash
+    {
+      "token": ""
+    }
+```
 
 ### Get contacts for a user [GET /api/contacts]
 
+**Request**: Get contacts for logged in user
+Headers:
+
+```bash
+x-auth-token: USER_JWT
+```
+
+**Response**: 200 (application/json)
+Body:
+
+```bash
+    {
+      "contacts": []
+    }
+```
+
 ### Add a new contact [POST /api/contacts]
+
+**Request**: Add a new contact
+Headers:
+
+```bash
+Content-type: application/json
+x-auth-token: USER_JWT
+```
+
+Body:
+
+```bash
+    {
+      "name": "Anne Bonny",
+      "email": "abonny@test.com",
+      "phone": "",
+      "type": "" (personal or professional)
+    }
+```
+
+**Response**: 200 (application/json)
+Body:
+
+```bash
+    {
+      "contact": {}
+    }
+```
 
 ### Update a contact [PUT /api/contacts/:id]
 
+**Request**: Update an existing contact
+Parameters:
+
+```bash
+id: 123 (unique id of the contact)
+```
+
+Headers:
+
+```bash
+Content-type: application/json
+x-auth-token: USER_JWT
+```
+
+Body:
+
+```bash
+    {
+      "name": "",
+      "email": "",
+      "phone": "",
+      "type": "" (personal or professional)
+    }
+```
+
+**Response**: 200 (application/json)
+Body:
+
+```bash
+    {
+      "contact": {}
+    }
+```
+
 ### Delete a contact [DELETE /api/contacts/:id]
+
+**Request**: Delete an existing contact
+Parameters:
+
+```bash
+id: 123 (unique id of the contact)
+```
+
+Headers:
+
+```bash
+x-auth-token: USER_JWT
+```
+
+**Response**: 200 (application/json)
+Body:
+
+```bash
+    {
+      "msg": "Contact deleted
+    }
+```
 
 ## Technologies
 
