@@ -160,6 +160,7 @@ Body:
 ### Delete a contact [DELETE /api/contacts/:id]
 
 **Request**: Delete an existing contact
+
 Parameters:
 
 ```bash
