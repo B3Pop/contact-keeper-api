@@ -21,6 +21,7 @@ Runs the app in the development mode on [http://localhost:3000](http://localhost
 ### Register a user [POST /api/users]
 
 **Request**: Add user and request JWT
+
 Headers:
 
 ```bash
@@ -38,6 +39,7 @@ Body:
 ```
 
 **Response**: 200 (application/json)
+
 Body:
 
 ```bash
@@ -49,6 +51,7 @@ Body:
 ### Login a user [POST /api/auth]
 
 **Request**: Login user and receive JWT
+
 Headers:
 
 ```bash
@@ -65,6 +68,7 @@ Body:
 ```
 
 **Response**: 200 (application/json)
+
 Body:
 
 ```bash
@@ -76,6 +80,7 @@ Body:
 ### Get contacts for a user [GET /api/contacts]
 
 **Request**: Get contacts for logged in user
+
 Headers:
 
 ```bash
@@ -83,6 +88,7 @@ x-auth-token: USER_JWT
 ```
 
 **Response**: 200 (application/json)
+
 Body:
 
 ```bash
@@ -94,6 +100,7 @@ Body:
 ### Add a new contact [POST /api/contacts]
 
 **Request**: Add a new contact
+
 Headers:
 
 ```bash
@@ -113,6 +120,7 @@ Body:
 ```
 
 **Response**: 200 (application/json)
+
 Body:
 
 ```bash
@@ -124,6 +132,7 @@ Body:
 ### Update a contact [PUT /api/contacts/:id]
 
 **Request**: Update an existing contact
+
 Parameters:
 
 ```bash
@@ -149,6 +158,7 @@ Body:
 ```
 
 **Response**: 200 (application/json)
+
 Body:
 
 ```bash
@@ -174,6 +184,7 @@ x-auth-token: USER_JWT
 ```
 
 **Response**: 200 (application/json)
+
 Body:
 
 ```bash
